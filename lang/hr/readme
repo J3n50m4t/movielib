@@ -1,4 +1,4 @@
-Ova skripta automatski sinkronizira i pokazuje XBMC/Kodi biblioteku.
+Ova skripta automatski sinkronizira i pokazuje Plex/Kodi biblioteku.
 
 Zahtjevi:
 - Poslužitelj sa Apache servisom, PHP 5 i MySql 5

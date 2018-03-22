@@ -420,7 +420,7 @@ $(document).ready(function() {
         }
     });
     
-    // test XBMC conn
+    // test Plex conn
     $('#plex_test').click(function(){
         var plex_host = $('#plex_host').val();
         var plex_port = $('#plex_port').val();

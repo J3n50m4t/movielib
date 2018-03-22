@@ -1,4 +1,4 @@
-Het script synchroniseert automatisch en toont de XBMC/Kodi bibliotheek.
+Het script synchroniseert automatisch en toont de Plex/Kodi bibliotheek.
 
 Vereisten:
 - Server met Apache server, PHP 5, MySql 5

@@ -1,4 +1,4 @@
-Skript automaticky synchronizuje a zobrazuje XBMC/Kodi knižnicu.
+Skript automaticky synchronizuje a zobrazuje Plex/Kodi knižnicu.
 
 Požiadavky
 - Server with Apache server, PHP 5, MySql 5

@@ -608,7 +608,7 @@ if ($option == 'banner') {
 }
 
 /* ########
- * # XBMC #
+ * # Plex #
  */########
 if ($option == 'plex') {
     $_SESSION = array();
@@ -679,7 +679,7 @@ if ($output_panel_info !== '') {
                 <a class="box" href="admin.php?option=password"><?PHP echo $lang['a_html_password'] ?></a>
                 <a class="box" href="admin.php?option=token"><?PHP echo $lang['a_html_change_token'] ?></a>
                 <a class="box" href="admin.php?option=banner"><?PHP echo $lang['a_html_banner'] ?></a>
-                <a class="box" href="admin.php?option=plex">XBMC</a>
+                <a class="box" href="admin.php?option=plex">Plex</a>
                 <a class="box" href="login.php?login=admin_logout"><?PHP echo $lang['a_html_logout'] ?></a>
             </div>
             <div id="panel_right">

@@ -1,4 +1,4 @@
-Skrypt automatycznie synchronizuje i wyświetla zawartość biblioteki z XBMC/Kodi.
+Skrypt automatycznie synchronizuje i wyświetla zawartość biblioteki z Plex/Kodi.
 
 Wymagania:
 - Serwer Apache, PHP 5, MySql 5

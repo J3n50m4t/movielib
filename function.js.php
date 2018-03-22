@@ -306,10 +306,10 @@ if ($option  == 'remote') {
             }
             break;
         case 'check':
-            $json = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "XBMC.GetInfoLabels", "id": 1}');
+            $json = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "Plex.GetInfoLabels", "id": 1}');
             break;
         case 'plex_test':
-            $json_test = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "XBMC.GetInfoLabels", "id": 1}');
+            $json_test = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "Plex.GetInfoLabels", "id": 1}');
             $get_test = @file_get_contents('http://' . $_GET['plex_login'] . ':' . $_GET['plex_pass'] . '@' . $_GET['plex_host'] . ':' . $_GET['plex_port'] . '/jsonrpc?request=' . $json_test, false, $timeout);
             if (!$get_test) {
                 echo '{"error": "error"}';

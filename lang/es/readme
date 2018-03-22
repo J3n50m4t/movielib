@@ -1,4 +1,4 @@
-El script se sincroniza automáticamente y muestra la librería de XBMC/Kodi.
+El script se sincroniza automáticamente y muestra la librería de Plex/Kodi.
 
 Requisitos:
 - Servidor con Apache Server, PHP 5, MySql 5

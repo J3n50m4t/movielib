@@ -923,7 +923,7 @@ if ($id == 0) {
     $output['meta_url'] = $url . 'index.php';
     $output['meta_img'] = $url . ('templates/' . $setting['theme'] . '/img/logo.jpg');
     $output['meta_type'] = 'website';
-    $output['meta_desc'] = 'Page whereby using XBMC can present your library of movies and TV series.';
+    $output['meta_desc'] = 'Page whereby using Plex can present your library of movies and TV series.';
 }
 if ($setting['show_facebook'] == 1) {
     $show['facebook'] = 1;
