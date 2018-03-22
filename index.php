@@ -408,7 +408,7 @@ while ($list = mysqli_fetch_assoc($list_result)) {
     $show_desc['title']           = 1;
     
     if (isset($_SESSION['logged_admin']) && $_SESSION['logged_admin'] == true && $video == 'movies') {
-        $show_desc['xbmc'] = 1;
+        $show_desc['plex'] = 1;
     }
     
     // link title
@@ -422,7 +422,7 @@ while ($list = mysqli_fetch_assoc($list_result)) {
     
     // file
     if ($video == 'movies') {
-        $output_desc['file'] = 'http://' . $setting['xbmc_login'] . ':' . $setting['xbmc_pass'] . '@' . $setting['xbmc_host'] . ':' . $setting['xbmc_port'] . '/vfs/' . rawurlencode($list['file']);
+        $output_desc['file'] = 'http://' . $setting['plex_login'] . ':' . $setting['plex_pass'] . '@' . $setting['plex_host'] . ':' . $setting['plex_port'] . '/vfs/' . rawurlencode($list['file']);
     }
     
     // poster
@@ -755,7 +755,7 @@ while ($list = mysqli_fetch_assoc($list_result)) {
                 }
                 
                 if (isset($_SESSION['logged_admin']) && $_SESSION['logged_admin'] == true && $video == 'tvshows') {
-                    $show_episode['xbmc'] = 1;
+                    $show_episode['plex'] = 1;
                 }
                 
                 $output_episode['episode'] = $episodes['id'];
@@ -777,7 +777,7 @@ while ($list = mysqli_fetch_assoc($list_result)) {
                 }
                 
                 // file
-                $output_episode['file'] = 'http://' . $setting['xbmc_login'] . ':' . $setting['xbmc_pass'] . '@' . $setting['xbmc_host'] . ':' . $setting['xbmc_port'] . '/vfs/' . rawurlencode($episodes['file']);
+                $output_episode['file'] = 'http://' . $setting['plex_login'] . ':' . $setting['plex_pass'] . '@' . $setting['plex_host'] . ':' . $setting['plex_port'] . '/vfs/' . rawurlencode($episodes['file']);
                 
                 // thumbnail
                 if (file_exists('cache/episodes_' . $episodes['id'] . '.jpg')) {

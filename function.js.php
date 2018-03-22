@@ -214,11 +214,11 @@ if ($option  == 'remote') {
         case 'playing':
             // get player status
             $json_player = urlencode('{"jsonrpc": "2.0", "params": {"playerid": 1}, "method": "Player.GetItem", "id": 1}');
-            $get_player = @file_get_contents('http://' . $setting['xbmc_login'] . ':' . $setting['xbmc_pass'] . '@' . $setting['xbmc_host'] . ':' . $setting['xbmc_port'] . '/jsonrpc?request=' . $json_player, false, $timeout);
+            $get_player = @file_get_contents('http://' . $setting['plex_login'] . ':' . $setting['plex_pass'] . '@' . $setting['plex_host'] . ':' . $setting['plex_port'] . '/jsonrpc?request=' . $json_player, false, $timeout);
             $player = json_decode($get_player, true);
             if (isset($player['result'])) {
                 $json_player_status = urlencode('{"jsonrpc": "2.0", "params": {"playerid": 1, "properties": ["percentage", "time", "totaltime"]}, "method": "Player.GetProperties", "id": 1}');
-                $get_player_status = @file_get_contents('http://' . $setting['xbmc_login'] . ':' . $setting['xbmc_pass'] . '@' . $setting['xbmc_host'] . ':' . $setting['xbmc_port'] . '/jsonrpc?request=' . $json_player_status, false, $timeout);
+                $get_player_status = @file_get_contents('http://' . $setting['plex_login'] . ':' . $setting['plex_pass'] . '@' . $setting['plex_host'] . ':' . $setting['plex_port'] . '/jsonrpc?request=' . $json_player_status, false, $timeout);
                 $player_status = json_decode($get_player_status, true);
                 $item = array_merge($player['result']['item'], $player_status['result']);
                 connect($mysql_ml);
@@ -308,9 +308,9 @@ if ($option  == 'remote') {
         case 'check':
             $json = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "XBMC.GetInfoLabels", "id": 1}');
             break;
-        case 'xbmc_test':
+        case 'plex_test':
             $json_test = urlencode('{"jsonrpc": "2.0", "params": {"labels": ["System.BuildVersion"]}, "method": "XBMC.GetInfoLabels", "id": 1}');
-            $get_test = @file_get_contents('http://' . $_GET['xbmc_login'] . ':' . $_GET['xbmc_pass'] . '@' . $_GET['xbmc_host'] . ':' . $_GET['xbmc_port'] . '/jsonrpc?request=' . $json_test, false, $timeout);
+            $get_test = @file_get_contents('http://' . $_GET['plex_login'] . ':' . $_GET['plex_pass'] . '@' . $_GET['plex_host'] . ':' . $_GET['plex_port'] . '/jsonrpc?request=' . $json_test, false, $timeout);
             if (!$get_test) {
                 echo '{"error": "error"}';
             } else {
@@ -319,7 +319,7 @@ if ($option  == 'remote') {
         break;
     }
     if (isset($json)) {
-        $get = @file_get_contents('http://' . $setting['xbmc_login'] . ':' . $setting['xbmc_pass'] . '@' . $setting['xbmc_host'] . ':' . $setting['xbmc_port'] . '/jsonrpc?request=' . $json, false, $timeout);
+        $get = @file_get_contents('http://' . $setting['plex_login'] . ':' . $setting['plex_pass'] . '@' . $setting['plex_host'] . ':' . $setting['plex_port'] . '/jsonrpc?request=' . $json, false, $timeout);
         if (!$get) {
             echo '{"error": "error"}';
         } else {

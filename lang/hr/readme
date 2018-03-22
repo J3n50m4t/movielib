@@ -2,7 +2,7 @@ Ova skripta automatski sinkronizira i pokazuje XBMC/Kodi biblioteku.
 
 Zahtjevi:
 - Poslužitelj sa Apache servisom, PHP 5 i MySql 5
-- Dodatak "Movielib" za XBMC/Kodi https://raw.github.com/Regss/xbmc-regss-repository/master/repo/repository.regss/repository.regss-1.2.1.zip 
+- Plex Server
 
 Zadana lozinka:
 Pristup stranici: user

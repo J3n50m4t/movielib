@@ -2,7 +2,7 @@ Lo script sincronizza e visualizza automaticamente la libreria di XBMC/Kodi.
 
 Requisiti:
 - Server con Apache, PHP 5, MySql 5
-- Addon "Movielib" per XBMC/Kodi https://raw.github.com/Regss/xbmc-regss-repository/master/repo/repository.regss/repository.regss-1.2.1.zip 
+- Plex Server
 
 Password di default:
 Accesso al sito: user

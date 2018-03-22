@@ -9,9 +9,9 @@
 .title a:visited { font-size:20px; font-weight:bold; color:#414141; }
 .title a:active { font-size:20px; font-weight:bold; color:#414141; }
 .title a:hover { font-size:20px; font-weight:bold; color:#414141; text-decoration:underline; }
-.xbmc_hide { width:22px; position:absolute; opacity:.0; margin-top:10px; margin-left:5px; }
-.xbmc_hide img { cursor:pointer; }
-.xbmc_e { margin-left:10px; }
+.plex_hide { width:22px; position:absolute; opacity:.0; margin-top:10px; margin-left:5px; }
+.plex_hide img { cursor:pointer; }
+.plex_e { margin-left:10px; }
 .title_org { font-size:11px; font-weight:bold; color:#888; }
 .imdb_img { position: absolute; margin-left:5px; margin-top:-1px; }
 .watched_img { display:block; position:absolute; margin-left:102px; margin-top:-44px; }

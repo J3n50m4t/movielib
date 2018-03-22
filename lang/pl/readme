@@ -2,7 +2,7 @@ Skrypt automatycznie synchronizuje i wyświetla zawartość biblioteki z XBMC/Ko
 
 Wymagania:
 - Serwer Apache, PHP 5, MySql 5
-- Add-on "Movielib" dla XBMC/Kodi https://raw.github.com/Regss/xbmc-regss-repository/master/repo/repository.regss/repository.regss-1.2.1.zip 
+- Plex Server
 
 Domyślne hasła:
 Dostęp do strony: user

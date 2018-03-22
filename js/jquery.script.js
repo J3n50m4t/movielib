@@ -279,9 +279,9 @@ $(document).ready(function() {
     // control remote - check connection and change logo
     $.ajax({url: 'function.js.php?option=remote&f=check', dataType: 'json', success: function(data){
         if ('result' in data) {
-            $('#r_right img').attr('src', 'templates/'+theme+'/img/xbmc_v.png');
+            $('#r_right img').attr('src', 'templates/'+theme+'/img/plex_v.png');
         } else {
-            $('#r_right img').attr('src', 'templates/'+theme+'/img/xbmc_vd.png');
+            $('#r_right img').attr('src', 'templates/'+theme+'/img/plex_vd.png');
         }
     }});
     
@@ -290,9 +290,9 @@ $(document).ready(function() {
         keypress = true;
         $.ajax({url: 'function.js.php?option=remote&f=check', dataType: 'json', success: function(data){
             if ('result' in data) {
-                $('#r_right img').attr('src', 'templates/'+theme+'/img/xbmc_v.png');
+                $('#r_right img').attr('src', 'templates/'+theme+'/img/plex_v.png');
             } else {
-                $('#r_right img').attr('src', 'templates/'+theme+'/img/xbmc_vd.png');
+                $('#r_right img').attr('src', 'templates/'+theme+'/img/plex_vd.png');
             }
         }});
         $('#panel_remote').animate({marginLeft: '10px'}, {queue: false, duration: 500, complete: function(){
@@ -340,10 +340,10 @@ $(document).ready(function() {
     
     // panel desc
     $('.movie, .episode').mouseenter(function(){
-        $(this).children('.xbmc_hide').animate({opacity: 1}, {queue: false, duration: 300});
+        $(this).children('.plex_hide').animate({opacity: 1}, {queue: false, duration: 300});
     });
     $('.movie, .episode').mouseleave(function(){
-        $(this).children('.xbmc_hide').animate({opacity: .0}, {queue: false, duration: 300});
+        $(this).children('.plex_hide').animate({opacity: .0}, {queue: false, duration: 300});
     });
     
     // create list.m3u
@@ -353,7 +353,7 @@ $(document).ready(function() {
         $.ajax({url: 'function.js.php?option=remote&f=list&id='+id+'&file='+file});
     });
     
-    // play movie in xbmc
+    // play movie in plex
     $('.play').click(function(){
         var id = $(this).parent().attr('id');
         var video = $('#panel_list').attr('class');
@@ -421,22 +421,22 @@ $(document).ready(function() {
     });
     
     // test XBMC conn
-    $('#xbmc_test').click(function(){
-        var xbmc_host = $('#xbmc_host').val();
-        var xbmc_port = $('#xbmc_port').val();
-        var xbmc_login = $('#xbmc_login').val();
-        var xbmc_pass = $('#xbmc_pass').val();
-        $.ajax({url: 'function.js.php?option=remote&f=xbmc_test&xbmc_host='+xbmc_host+'&xbmc_port='+xbmc_port+'&xbmc_login='+xbmc_login+'&xbmc_pass='+xbmc_pass,
+    $('#plex_test').click(function(){
+        var plex_host = $('#plex_host').val();
+        var plex_port = $('#plex_port').val();
+        var plex_login = $('#plex_login').val();
+        var plex_pass = $('#plex_pass').val();
+        $.ajax({url: 'function.js.php?option=remote&f=plex_test&plex_host='+plex_host+'&plex_port='+plex_port+'&plex_login='+plex_login+'&plex_pass='+plex_pass,
         dataType: 'json',
         success: function(data){
             if ('result' in data) {
-                $('#xbmc_test div').html('<img src="admin/img/exist.png">');
-                $('#xbmc_test').css({'border': '2px solid #0FE800'});
-                $('#xbmc_test img').css({'display': 'block', 'position': 'absolute', 'margin-left': '120px'});
+                $('#plex_test div').html('<img src="admin/img/exist.png">');
+                $('#plex_test').css({'border': '2px solid #0FE800'});
+                $('#plex_test img').css({'display': 'block', 'position': 'absolute', 'margin-left': '120px'});
             } else {
-                $('#xbmc_test div').html('<img src="admin/img/delete.png">');
-                $('#xbmc_test').css('border', '2px solid #FF0000');
-                $('#xbmc_test img').css({'display': 'block', 'position': 'absolute', 'margin-left': '120px'});
+                $('#plex_test div').html('<img src="admin/img/delete.png">');
+                $('#plex_test').css('border', '2px solid #FF0000');
+                $('#plex_test img').css({'display': 'block', 'position': 'absolute', 'margin-left': '120px'});
             }
         }});
     });

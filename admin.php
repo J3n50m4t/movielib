@@ -302,13 +302,13 @@ if ($option == 'settings') {
     $output_default_sort = '';
     $output_default_watch = '';
     $output_panel_top_limit = '';
-    $output_xbmc_thumbs = '';
-    $output_xbmc_posters = '';
-    $output_xbmc_fanarts = '';
-    $output_xbmc_exthumbs = '';
-    $output_xbmc_exthumbs_q = '';
-    $output_xbmc_auto_conf_remote = '';
-    $output_xbmc_master = '';
+    $output_plex_thumbs = '';
+    $output_plex_posters = '';
+    $output_plex_fanarts = '';
+    $output_plex_exthumbs = '';
+    $output_plex_exthumbs_q = '';
+    $output_plex_auto_conf_remote = '';
+    $output_plex_master = '';
     
     // set language input
     $option_language = scandir('lang/');
@@ -361,7 +361,7 @@ if ($option == 'settings') {
     // extra thumbs size
     $dimens = array('1920x1080', '1280x720', '853x480');
     foreach ($dimens as $val) {
-        $output_xbmc_exthumbs_q.= '<option' . ($val == $setting['xbmc_exthumbs_q'] ? ' selected="selected"' : '') . ' value="' . $val . '">' . $val . '</option>';
+        $output_plex_exthumbs_q.= '<option' . ($val == $setting['plex_exthumbs_q'] ? ' selected="selected"' : '') . ' value="' . $val . '">' . $val . '</option>';
     }
     
     $mode = array(0, 1);
@@ -379,12 +379,12 @@ if ($option == 'settings') {
         $output_show_facebook.= '<option' . ($setting['show_facebook'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
         $output_protect_site.= '<option' . ($setting['protect_site'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
         $output_mod_rewrite.= '<option' . ($setting['mod_rewrite'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_thumbs.= '<option' . ($setting['xbmc_thumbs'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_posters.= '<option' . ($setting['xbmc_posters'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_fanarts.= '<option' . ($setting['xbmc_fanarts'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_exthumbs.= '<option' . ($setting['xbmc_exthumbs'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_auto_conf_remote.= '<option' . ($setting['xbmc_auto_conf_remote'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
-        $output_xbmc_master.= '<option' . ($setting['xbmc_master'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_thumbs.= '<option' . ($setting['plex_thumbs'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_posters.= '<option' . ($setting['plex_posters'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_fanarts.= '<option' . ($setting['plex_fanarts'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_exthumbs.= '<option' . ($setting['plex_exthumbs'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_auto_conf_remote.= '<option' . ($setting['plex_auto_conf_remote'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
+        $output_plex_master.= '<option' . ($setting['plex_master'] == $val ? ' selected="selected"' : '') . ' value="' . $val . '">' . ($val == 0 ? $lang['a_setting_off'] : $lang['a_setting_on']) . '</option>';
     }
     
     $mode2 = array(0 => $lang['a_setting_off'], 1 => $lang['a_setting_on_expanded'], 2 => $lang['a_setting_on_collapsed']);
@@ -410,13 +410,13 @@ if ($option == 'settings') {
         <form action="admin.php?option=settings_save" method="post">
             <table class="table">
                 <tr><td class="bold orange">' . $lang['a_set_sync'] . '</td><td></td></tr>
-                <tr><td>' . $lang['a_xbmc_thumbs'] . ':</td><td><select name="xbmc_thumbs">' . $output_xbmc_thumbs . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_posters'] . ':</td><td><select name="xbmc_posters">' . $output_xbmc_posters . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_fanarts'] . ':</td><td><select name="xbmc_fanarts">' . $output_xbmc_fanarts . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_exthumbs'] . ':</td><td><select name="xbmc_exthumbs">' . $output_xbmc_exthumbs . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_exthumbs_q'] . ':</td><td><select name="xbmc_exthumbs_q">' . $output_xbmc_exthumbs_q . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_auto_conf_remote'] . ':</td><td><select name="xbmc_auto_conf_remote">' . $output_xbmc_auto_conf_remote . '</select></td></tr>
-                <tr><td>' . $lang['a_xbmc_master'] . ':</td><td><select name="xbmc_master">' . $output_xbmc_master . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_thumbs'] . ':</td><td><select name="plex_thumbs">' . $output_plex_thumbs . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_posters'] . ':</td><td><select name="plex_posters">' . $output_plex_posters . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_fanarts'] . ':</td><td><select name="plex_fanarts">' . $output_plex_fanarts . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_exthumbs'] . ':</td><td><select name="plex_exthumbs">' . $output_plex_exthumbs . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_exthumbs_q'] . ':</td><td><select name="plex_exthumbs_q">' . $output_plex_exthumbs_q . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_auto_conf_remote'] . ':</td><td><select name="plex_auto_conf_remote">' . $output_plex_auto_conf_remote . '</select></td></tr>
+                <tr><td>' . $lang['a_plex_master'] . ':</td><td><select name="plex_master">' . $output_plex_master . '</select></td></tr>
                 <tr><td class="bold orange">' . $lang['a_set_main'] . '</td><td></td></tr>
                 <tr><td>' . $lang['a_site_name'] . ':</td><td><input type="text" name="site_name" value="' . $setting['site_name'] . '" /></td></tr>
                 <tr><td>' . $lang['a_language'] . ':</td><td><select name="language">' . $output_lang . '</select></td></tr>
@@ -610,39 +610,39 @@ if ($option == 'banner') {
 /* ########
  * # XBMC #
  */########
-if ($option == 'xbmc') {
+if ($option == 'plex') {
     $_SESSION = array();
     $_SESSION['logged_admin'] = true;
-    if ($setting['xbmc_auto_conf_remote'] == 1) {
-        $output_panel.= '<p class="green">' . $lang['a_xbmc_auto_conf_enabled'] . '</p>';
+    if ($setting['plex_auto_conf_remote'] == 1) {
+        $output_panel.= '<p class="green">' . $lang['a_plex_auto_conf_enabled'] . '</p>';
         $d = 'disabled';
     } else {
         $d = '';
     }
     $output_panel.= '
-        <form action="admin.php?option=xbmc_save" method="post">
+        <form action="admin.php?option=plex_save" method="post">
             <table class="table">
-                <tr><td class="bold orange">' . $lang['a_xbmc_settings'] . '</td><td></td></tr>
-                <tr><td>' . $lang['a_xbmc_host'] . '</td><td><input id="xbmc_host" type="input" name="xbmc_host" value="' . $setting['xbmc_host'] . '" ' . $d . '/></td></tr>
-                <tr><td>' . $lang['a_xbmc_port'] . '</td><td><input id="xbmc_port" type="input" name="xbmc_port" value="' . $setting['xbmc_port'] . '" ' . $d . '/></td></tr>
-                <tr><td>' . $lang['a_xbmc_login'] . '</td><td><input id="xbmc_login" type="input" name="xbmc_login" value="' . $setting['xbmc_login'] . '" ' . $d . '/></td></tr>
-                <tr><td>' . $lang['a_xbmc_pass'] . '</td><td><input id="xbmc_pass" type="input" name="xbmc_pass" value="' . $setting['xbmc_pass'] . '" ' . $d . '/></td></tr>
+                <tr><td class="bold orange">' . $lang['a_plex_settings'] . '</td><td></td></tr>
+                <tr><td>' . $lang['a_plex_host'] . '</td><td><input id="plex_host" type="input" name="plex_host" value="' . $setting['plex_host'] . '" ' . $d . '/></td></tr>
+                <tr><td>' . $lang['a_plex_port'] . '</td><td><input id="plex_port" type="input" name="plex_port" value="' . $setting['plex_port'] . '" ' . $d . '/></td></tr>
+                <tr><td>' . $lang['a_plex_login'] . '</td><td><input id="plex_login" type="input" name="plex_login" value="' . $setting['plex_login'] . '" ' . $d . '/></td></tr>
+                <tr><td>' . $lang['a_plex_pass'] . '</td><td><input id="plex_pass" type="input" name="plex_pass" value="' . $setting['plex_pass'] . '" ' . $d . '/></td></tr>
             </table>
-                <div id="xbmc_test" class="box"><div></div>' . $lang['a_xmbc_test'] . '</div>
+                <div id="plex_test" class="box"><div></div>' . $lang['a_xmbc_test'] . '</div>
                 <input type="submit" value="' . $lang['a_save'] . '" ' . $d . '/>
         </form>
     ';
 }
 
 // Save connection
-if ($option == 'xbmc_save') {
-    $xbmc_update_sql = 'UPDATE `config` SET 
-        `xbmc_host` = "' . $_POST['xbmc_host'] . '", 
-        `xbmc_port` = "' . $_POST['xbmc_port'] . '",
-        `xbmc_login` = "' . $_POST['xbmc_login'] . '", 
-        `xbmc_pass` = "' . $_POST['xbmc_pass'] . '"';
-    mysql_q($xbmc_update_sql);
-    $output_panel_info.= $lang['a_xbmc_saved'] . '<br />';
+if ($option == 'plex_save') {
+    $plex_update_sql = 'UPDATE `config` SET 
+        `plex_host` = "' . $_POST['plex_host'] . '", 
+        `plex_port` = "' . $_POST['plex_port'] . '",
+        `plex_login` = "' . $_POST['plex_login'] . '", 
+        `plex_pass` = "' . $_POST['plex_pass'] . '"';
+    mysql_q($plex_update_sql);
+    $output_panel_info.= $lang['a_plex_saved'] . '<br />';
     $_SESSION = array();
     $_SESSION['logged_admin'] = true;
 }
@@ -679,7 +679,7 @@ if ($output_panel_info !== '') {
                 <a class="box" href="admin.php?option=password"><?PHP echo $lang['a_html_password'] ?></a>
                 <a class="box" href="admin.php?option=token"><?PHP echo $lang['a_html_change_token'] ?></a>
                 <a class="box" href="admin.php?option=banner"><?PHP echo $lang['a_html_banner'] ?></a>
-                <a class="box" href="admin.php?option=xbmc">XBMC</a>
+                <a class="box" href="admin.php?option=plex">XBMC</a>
                 <a class="box" href="login.php?login=admin_logout"><?PHP echo $lang['a_html_logout'] ?></a>
             </div>
             <div id="panel_right">

@@ -2,7 +2,7 @@ Het script synchroniseert automatisch en toont de XBMC/Kodi bibliotheek.
 
 Vereisten:
 - Server met Apache server, PHP 5, MySql 5
-- Addon "Movielib" voor XBMC/Kodi https://raw.github.com/Regss/xbmc-regss-repository/master/repo/repository.regss/repository.regss-1.2.1.zip 
+- Plex Server
 
 Standaard wachtwoorden:
 Toegang tot site: gebruiker

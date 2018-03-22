@@ -1,6 +1,6 @@
 .movie { border:1px solid #ddd; margin:10px; display:inline-block; }
 .poster { width:100px; height:147px; display:block; }
-.xbmc_hide { width:22px; position:absolute; opacity:.0; margin-top:10px; margin-left:5px; }
-.xbmc_hide img { cursor:pointer; }
+.plex_hide { width:22px; position:absolute; opacity:.0; margin-top:10px; margin-left:5px; }
+.plex_hide img { cursor:pointer; }
 .ribbon_new { position: absolute; margin-left:-15px; margin-top:-151px; width:69px; height:70px; }
 .watched_img { width:30px; position:absolute; margin-left:76px; margin-top:-24px; display:block; }

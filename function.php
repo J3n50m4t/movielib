@@ -641,12 +641,12 @@ function create_url($setting, $urls) {
  */######################
 function auto_conf_remote($s) {
     $ip = $_SERVER['REMOTE_ADDR'];
-    $xbmc_update_sql = 'UPDATE `config` SET 
-        `xbmc_host` = "' . $ip . '", 
-        `xbmc_port` = "' . $s['webserverport'] . '",
-        `xbmc_login` = "' . $s['webserverusername'] . '", 
-        `xbmc_pass` = "' . $s['webserverpassword'] . '"';
-    mysql_q($xbmc_update_sql);
+    $plex_update_sql = 'UPDATE `config` SET 
+        `plex_host` = "' . $ip . '", 
+        `plex_port` = "' . $s['webserverport'] . '",
+        `plex_login` = "' . $s['webserverusername'] . '", 
+        `plex_pass` = "' . $s['webserverpassword'] . '"';
+    mysql_q($plex_update_sql);
     $_SESSION = array();
 }
 
